@@ -1,0 +1,40 @@
+DATA QUALITY REPORT
+
+
+Customers Dataset
+-----------------
+Records read: 25
+Duplicate records removed: 1
+Records with missing email dropped: 5
+Final records loaded: 19
+
+Products Dataset
+----------------
+Records read: 20
+Missing prices filled: 3
+Missing stock values filled: 1
+Final records loaded: 20
+
+Sales Dataset
+-------------
+Records read: 40
+Duplicate transactions removed: 1
+Invalid records dropped (missing customer/product/date): 5
+Final records loaded: 34
+
+
+
+###code
+
+with open("data_quality_report.txt", "w") as f:
+    f.write("DATA QUALITY REPORT\n")
+    f.write("===================\n\n")
+
+    f.write(f"Customers read: {customers_raw_count}\n")
+    f.write(f"Customers loaded: {len(customers)}\n\n")
+
+    f.write(f"Products read: {products_raw_count}\n")
+    f.write(f"Products loaded: {len(products)}\n\n")
+
+    f.write(f"Sales read: {sales_raw_count}\n")
+    f.write(f"Sales loaded: {len(sales)}\n")
